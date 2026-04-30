@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 80);
-            $table->decimal('valor', 8.2);
+            $table->decimal('valor', 8,2);
             $table->integer('qtd_estoque');
             $table->integer('qtd_minima');
             $table->timestamps();

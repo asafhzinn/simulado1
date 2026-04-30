@@ -1,5 +1,5 @@
 <div class="mt-5">
-   <form class="row g-3" wire:submit.prevent='store'>
+   <form class="row g-3" wire:submit.prevent='update'>
   <div class="col-12">
     <label for="nome" class="form-label">Nome</label>
     <input type="text" class="form-control" id="nome" wire:model='nome'>
