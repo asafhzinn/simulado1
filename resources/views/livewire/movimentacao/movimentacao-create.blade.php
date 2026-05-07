@@ -45,7 +45,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <div class="mb-3">
                                 <label class="form-label">Quantidade</label>
                                 <input type="number" class="form-control" wire:model='quantidade_movimentada'>
