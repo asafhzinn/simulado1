@@ -1,4 +1,5 @@
-<div class="mt-5">
+<div class="mt-3">
+    <h2 class="mb-4">Gestão de Movimentação</h2>
     @if (session()->has('error'))
         <div class="alert alert-danger">
             {{ session('error') }}
@@ -17,7 +18,7 @@
 
 
 
-    <table class="table table-hover">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col">Produto</th>
@@ -33,8 +34,13 @@
                 <tr>
                     <th scope="row">{{ $m->produto->nome }}</th>
                     <td>{{ $m->quantidade }}</td>
-                    <td>{{ $m->data_movimentacao }}</td>
-                    <td>{{ $m->tipo }}</td>
+                    <td>{{ \Carbon\Carbon::parse($m->data_movimentacao) ->format('d/m/Y') }}</td>
+                    <td>@if($m->tipo == 'entrada')
+                    <span class="badge bg-primary">Entrada</span>
+                    @else 
+                    <span class="badge bg-danger">Saida</span>
+                    @endif
+                    </td>
                     <td> {{ $m->produto->qtd_estoque }}</td>
                     <td> {{ $m->user->name }}</td>
                     <td>
